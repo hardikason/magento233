@@ -1,0 +1,22 @@
+{
+    "name": "neo/customapi",
+    "description": "Neo CustomApi",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "sonali.kosrabe@wwindia.com",
+            "name": "Sonali Kosrabe"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Neo\\CustomApi\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
