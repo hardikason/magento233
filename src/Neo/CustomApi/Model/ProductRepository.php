@@ -1,7 +1,13 @@
 <?php
 namespace Neo\CustomApi\Model;
-//use Neo\CustomApi\Api\ProductRepositoryInterface;
+
+use Neo\CustomApi\Api\ProductRepositoryInterface;
 use Magento\Catalog\Model\ProductFactory;
+
+
+/*
+Class ProductRepository 
+*/
 class ProductRepository implements ProductRepositoryInterface
 {
     protected $productFactory;
@@ -11,12 +17,11 @@ class ProductRepository implements ProductRepositoryInterface
         $this->productFactory = $productFactory;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getproductinfo($sku){
-        return $sku;
-        /*$ary_response = json_encode(['sku'=>$sku]);
-        return $ary_response;*/
-    	/*$productId = $this->productFactory->create()->getIdBySku($sku);
-    	//print_r($productId);die;
+    	$productId = $this->productFactory->create()->getIdBySku($sku);
     	if(!$productId){
     		return ["code" => '301', "message" => "SKU " . $sku . " not found in database."];
     	}else{
@@ -28,12 +33,22 @@ class ProductRepository implements ProductRepositoryInterface
 	                "product_id" => $productId
 	            ];
 	            $ary_response[] = $valid;
-	            //print_r($ary_response);die;
     		}else{
     			$ary_response[] = $productId;
     		}
     		return $ary_response;
-    	}*/
+    	}
 
+    }
+
+    /*
+    * {@inheritdoc}
+    */
+    public function updateProductInfo($products){
+        print_r($products);
+        foreach ($products as $product) {
+         //   echo $product['sku'];
+        }
+        
     }
 }

@@ -1,5 +1,9 @@
 <?php
 namespace Neo\CustomApi\Api;
+
+/*
+Interface ProductRepositoryInterface
+*/
 interface ProductRepositoryInterface
 {
     /**
@@ -8,4 +12,12 @@ interface ProductRepositoryInterface
      * @return string
      */
     public function getproductinfo($sku);
+
+
+    /**
+     * @api
+     * @param string[] $products
+     * @return array
+     */
+    public function updateProductInfo($products);
 }

@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
-    <route url="/V1/customapi/getproductinfo/:sku" method="GET">
+    <route url="/V1/customapi/getproductinfo" method="GET">
         <service class="Neo\CustomApi\Api\ProductRepositoryInterface" method="getproductinfo"/>
+        <resources>
+            <resource ref="Magento_Customer::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/customapi/updateproductinfo" method="POST">
+        <service class="Neo\CustomApi\Api\ProductRepositoryInterface" method="updateProductInfo"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>
         </resources>
